@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: "LANCE的博客"
+title: "LANCE 的博客"
 subtitle:
 description:
 author: lance lee
@@ -19,7 +19,7 @@ permalink_defaults:
 
 # Directory
 source_dir: source
-public_dir: ./../dreamandture.github.io
+public_dir: ./../mygitsite
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
@@ -35,12 +35,11 @@ external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
 post_asset_folder: true
-relative_link: false
 future: true
 highlight:
-  enable: false
-  line_number: false
-  auto_detect: false
+  enable: true
+  line_number: true
+  auto_detect: true
   tab_replace:
 
 # Category & Tag
@@ -67,6 +66,7 @@ pagination_dir: page
 #- hexo-server
 ## Themes: https://hexo.io/themes/
 theme: next
+#theme: landscape 
 #
 #theme: next
 
@@ -76,7 +76,7 @@ deploy:
   type:
 
 #disqus_shortname: jiangxiaoqiang
-duoshuo_shortname: lancelee
+#duoshuo_shortname: lancelee
 
 index_generator:
   per_page: 5
