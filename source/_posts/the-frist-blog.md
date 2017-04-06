@@ -1,7 +1,7 @@
 ---
 title: 第一篇blog
 date: 2017-04-03 11:04:59
-categories:
+categories: test
 tags:
    - 说明
 
