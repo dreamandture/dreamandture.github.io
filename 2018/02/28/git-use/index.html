@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="LANCE 的博客">
 <meta property="og:description" content="git 的安装与使用。乱七八糟的整理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-28T09:55:59.932Z">
+<meta property="og:updated_time" content="2018-03-01T05:04:37.867Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git 使用">
 <meta name="twitter:description" content="git 的安装与使用。乱七八糟的整理">
@@ -399,8 +399,7 @@
 
       
         <p>git 的安装与使用。乱七八糟的整理<br><a id="more"></a></p>
-<p>##1.git安装</p>
-<p>ubuntu：</p>
+<h2 id="1-git安装"><a href="#1-git安装" class="headerlink" title="1.git安装"></a>1.git安装</h2><p>ubuntu：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ apt-get install libcurl4-gnutls-dev libexpat1-dev gettext \</div><div class="line">  libz-dev libssl-dev</div><div class="line"></div><div class="line">$ apt-get install git-core</div><div class="line"></div><div class="line">$ git --version</div><div class="line">git version 1.8.1.2</div></pre></td></tr></table></figure>
 <p>centos:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ yum install curl-devel expat-devel gettext-devel \</div><div class="line">  openssl-devel zlib-devel</div><div class="line"></div><div class="line">$ yum -y install git-core</div><div class="line"></div><div class="line">$ git --version</div><div class="line">git version 1.7.1</div></pre></td></tr></table></figure>
@@ -408,7 +407,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name <span class="string">"runoob"</span></div><div class="line">$ git config --global user.email <span class="built_in">test</span>@runoob.com</div></pre></td></tr></table></figure>
 <p>查看配置：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --list</div><div class="line">git config user.name</div></pre></td></tr></table></figure>
-<p>##2.基本命令<br>创建仓库：</p>
+<h2 id="2-基本命令"><a href="#2-基本命令" class="headerlink" title="2.基本命令"></a>2.基本命令</h2><p>创建仓库：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git init</div><div class="line"><span class="comment">#or</span></div><div class="line">git init &lt;dir&gt;</div></pre></td></tr></table></figure>
 <p>提交：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git add *.c</div><div class="line">$ git add README</div><div class="line">$ git commit -m <span class="string">'初始化项目版本'</span></div><div class="line">git tag <span class="_">-a</span> v0.9 85<span class="built_in">fc</span>7e7 <span class="comment">#追加标签</span></div></pre></td></tr></table></figure>
@@ -420,8 +419,8 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git reset --hard commit-id-1</div></pre></td></tr></table></figure>
 <p>标签</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git tag <span class="_">-d</span> &lt;tagname&gt; <span class="comment">#删除标签</span></div><div class="line">git tag <span class="_">-a</span> v0.9 &lt;commit-id&gt; <span class="comment">#将标签应用到某次提交</span></div><div class="line">git tag <span class="_">-a</span> version -m <span class="string">"note"</span> </div><div class="line"><span class="comment">#git tag 是打标签的命令，-a 是添加标签，其后要跟新标签号，-m 及后面的字符串是对该标签的注释。</span></div><div class="line">git show &lt;tagname&gt;</div></pre></td></tr></table></figure>
-<p>###分支<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#查看分支</span></div><div class="line">git <span class="keyword">branch</span></div><div class="line">git <span class="keyword">branch </span>-v</div><div class="line"><span class="comment">#切换分支</span></div><div class="line">git checkout [分支名称]</div></pre></td></tr></table></figure></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">git pull <span class="tag">&lt;<span class="name">远程主机名</span>&gt;</span> <span class="tag">&lt;<span class="name">远程分支名</span>&gt;</span>:<span class="tag">&lt;<span class="name">本地分支名</span>&gt;</span></div><div class="line"></div><div class="line">git push <span class="tag">&lt;<span class="name">远程主机名</span>&gt;</span> <span class="tag">&lt;<span class="name">本地分支名</span>&gt;</span>:<span class="tag">&lt;<span class="name">远程分支名</span>&gt;</span></div><div class="line"></div><div class="line">删除远程分支</div><div class="line">git push <span class="tag">&lt;<span class="name">远程主机名</span>&gt;</span> 空:<span class="tag">&lt;<span class="name">远程分支名</span>&gt;</span></div><div class="line">git push origin :mysite</div><div class="line">删除本地分支</div><div class="line"> git branch -d <span class="tag">&lt;<span class="name">本地分支名</span>&gt;</span></div><div class="line"> git branch -d  mysite</div></pre></td></tr></table></figure>
+<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#查看分支</span></div><div class="line">git <span class="keyword">branch</span></div><div class="line">git <span class="keyword">branch </span>-v</div><div class="line"><span class="comment">#切换分支</span></div><div class="line">git checkout [分支名称]</div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">git pull <span class="tag">&lt;<span class="name">远程主机名</span>&gt;</span> <span class="tag">&lt;<span class="name">远程分支名</span>&gt;</span>:<span class="tag">&lt;<span class="name">本地分支名</span>&gt;</span></div><div class="line"></div><div class="line">git push <span class="tag">&lt;<span class="name">远程主机名</span>&gt;</span> <span class="tag">&lt;<span class="name">本地分支名</span>&gt;</span>:<span class="tag">&lt;<span class="name">远程分支名</span>&gt;</span></div><div class="line"></div><div class="line">删除远程分支</div><div class="line">git push <span class="tag">&lt;<span class="name">远程主机名</span>&gt;</span> 空:<span class="tag">&lt;<span class="name">远程分支名</span>&gt;</span></div><div class="line">git push origin :mysite</div><div class="line">删除本地分支</div><div class="line">git branch -d <span class="tag">&lt;<span class="name">本地分支名</span>&gt;</span></div><div class="line">git branch -d  mysite</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -522,8 +521,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/favicon.ico"
@@ -629,6 +637,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-git安装"><span class="nav-number">1.</span> <span class="nav-text">1.git安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-基本命令"><span class="nav-number">2.</span> <span class="nav-text">2.基本命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分支"><span class="nav-number">2.1.</span> <span class="nav-text">分支</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

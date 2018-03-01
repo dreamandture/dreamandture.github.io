@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="LANCE 的博客">
 <meta property="og:description" content="docker 安装与使用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-01T04:03:53.759Z">
+<meta property="og:updated_time" content="2018-03-01T05:04:47.038Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker 使用">
 <meta name="twitter:description" content="docker 安装与使用">
@@ -399,23 +399,18 @@
 
       
         <p>docker 安装与使用<br><a id="more"></a></p>
-<p>##1.运行一个</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo docker run -t -i ubuntu:14.04 /bin/bash</div><div class="line">docker start eafd9111ada6                <span class="comment"># 启动容器</span></div></pre></td></tr></table></figure>
-<p>##1.镜像保存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">docker commit <span class="_">-a</span> <span class="string">'message aaaa'</span> CONTAINER_ID NEW_IMAGE_NAME </div><div class="line"><span class="comment">#把该容器保存为一个新镜像</span></div><div class="line">docker commit -m=<span class="string">'hello_world'</span> <span class="_">-a</span>=<span class="string">"lance"</span> 3eec6a474897 hello_world/lance</div></pre></td></tr></table></figure></p>
-<p>##2.删除<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">docker rmi IMAGE ID 删除</div><div class="line">docker rmi <span class="_">-f</span> IMAGE ID 强制删除</div><div class="line">docker rm $(docker ps <span class="_">-a</span> -q) <span class="comment">#删除所有已经停止的容器</span></div></pre></td></tr></table></figure></p>
-<p>##3.导入导出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">docker save -o ubuntu_14.04.tar ubuntu:14.04 ＃导出的是镜像</div><div class="line"><span class="comment">#导入：</span></div><div class="line">sudo docker load &lt; ubuntu_14.04.tar </div><div class="line"><span class="comment">#或者</span></div><div class="line">docker <span class="built_in">export</span> &lt;CONTAINER ID &gt; &gt; my_container.tar  <span class="comment">#导出的是容器不是镜像</span></div><div class="line">cat my_container.tar |docker import - image_name:tag</div></pre></td></tr></table></figure></p>
-<p>##4.进入容器</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker <span class="built_in">exec</span> -it eafd9111ada6  /bin/bash  <span class="comment"># 进入容器</span></div></pre></td></tr></table></figure>
+<h2 id="1-运行一个"><a href="#1-运行一个" class="headerlink" title="1.运行一个"></a>1.运行一个</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo docker run -t -i ubuntu:14.04 /bin/bash</div><div class="line">docker start eafd9111ada6                <span class="comment"># 启动容器</span></div></pre></td></tr></table></figure>
+<h2 id="1-镜像保存"><a href="#1-镜像保存" class="headerlink" title="1.镜像保存"></a>1.镜像保存</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">docker commit <span class="_">-a</span> <span class="string">'message aaaa'</span> CONTAINER_ID NEW_IMAGE_NAME </div><div class="line"><span class="comment">#把该容器保存为一个新镜像</span></div><div class="line">docker commit -m=<span class="string">'hello_world'</span> <span class="_">-a</span>=<span class="string">"lance"</span> 3eec6a474897 hello_world/lance</div></pre></td></tr></table></figure>
+<h2 id="2-删除"><a href="#2-删除" class="headerlink" title="2.删除"></a>2.删除</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">docker rmi IMAGE ID 删除</div><div class="line">docker rmi <span class="_">-f</span> IMAGE ID 强制删除</div><div class="line">docker rm $(docker ps <span class="_">-a</span> -q) <span class="comment">#删除所有已经停止的容器</span></div></pre></td></tr></table></figure>
+<h2 id="3-导入导出"><a href="#3-导入导出" class="headerlink" title="3.导入导出"></a>3.导入导出</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">docker save -o ubuntu_14.04.tar ubuntu:14.04 ＃导出的是镜像</div><div class="line"><span class="comment">#导入：</span></div><div class="line">sudo docker load &lt; ubuntu_14.04.tar </div><div class="line"><span class="comment">#或者</span></div><div class="line">docker <span class="built_in">export</span> &lt;CONTAINER ID &gt; &gt; my_container.tar  <span class="comment">#导出的是容器不是镜像</span></div><div class="line">cat my_container.tar |docker import - image_name:tag</div></pre></td></tr></table></figure>
+<h2 id="4-进入容器"><a href="#4-进入容器" class="headerlink" title="4.进入容器"></a>4.进入容器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker <span class="built_in">exec</span> -it eafd9111ada6  /bin/bash  <span class="comment"># 进入容器</span></div></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker <span class="built_in">history</span> image_id</div></pre></td></tr></table></figure>
-<p>#问题记录</p>
-<p>##1. docker命令自动补全功能<br>最小化安装centos后发现git docker等命令不能自动补全参数,而在Desktop安装环境下是可以自动补全的.</p>
+<h1 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h1><h2 id="1-docker命令自动补全功能"><a href="#1-docker命令自动补全功能" class="headerlink" title="1. docker命令自动补全功能"></a>1. docker命令自动补全功能</h2><p>最小化安装centos后发现git docker等命令不能自动补全参数,而在Desktop安装环境下是可以自动补全的.</p>
 <pre><code>yum install bash-completion -y
-</code></pre><p>##2.修改启动路径</p>
-<p>###2.1 Centos6下<br>/etc/sysconfig/docker里面加入</p>
+</code></pre><h2 id="2-修改启动路径"><a href="#2-修改启动路径" class="headerlink" title="2.修改启动路径"></a>2.修改启动路径</h2><h3 id="2-1-Centos6下"><a href="#2-1-Centos6下" class="headerlink" title="2.1 Centos6下"></a>2.1 Centos6下</h3><p>/etc/sysconfig/docker里面加入</p>
 <pre><code>other_args=&quot;-g /data/docker&quot;
-</code></pre><p>###2.2 Centos7下<br>修改<br>    vim /usr/lib/systemd/system/docker.servicervice为<br>    ExecStart=/usr/bin/docker daemon -H fd:// –graph /data/docker </p>
-<p>##3.docker-runc did not terminate sucessfully: unknown<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install http://mirror.centos.org/centos/7/os/x86_64/Packages/libseccomp-2.3.1-3.el7.x86_64.rpm</div></pre></td></tr></table></figure></p>
-
+</code></pre><h3 id="2-2-Centos7下"><a href="#2-2-Centos7下" class="headerlink" title="2.2 Centos7下"></a>2.2 Centos7下</h3><p>修改<br>    vim /usr/lib/systemd/system/docker.servicervice为<br>    ExecStart=/usr/bin/docker daemon -H fd:// –graph /data/docker </p>
+<h2 id="3-docker-runc-did-not-terminate-sucessfully-unknown"><a href="#3-docker-runc-did-not-terminate-sucessfully-unknown" class="headerlink" title="3.docker-runc did not terminate sucessfully: unknown"></a>3.docker-runc did not terminate sucessfully: unknown</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install http://mirror.centos.org/centos/7/os/x86_64/Packages/libseccomp-2.3.1-3.el7.x86_64.rpm</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -512,8 +507,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/favicon.ico"
@@ -619,6 +623,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-运行一个"><span class="nav-number">1.</span> <span class="nav-text">1.运行一个</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-镜像保存"><span class="nav-number">2.</span> <span class="nav-text">1.镜像保存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-删除"><span class="nav-number">3.</span> <span class="nav-text">2.删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-导入导出"><span class="nav-number">4.</span> <span class="nav-text">3.导入导出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-进入容器"><span class="nav-number">5.</span> <span class="nav-text">4.进入容器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题记录"><span class="nav-number"></span> <span class="nav-text">问题记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-docker命令自动补全功能"><span class="nav-number">1.</span> <span class="nav-text">1. docker命令自动补全功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-修改启动路径"><span class="nav-number">2.</span> <span class="nav-text">2.修改启动路径</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-Centos6下"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Centos6下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Centos7下"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 Centos7下</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-docker-runc-did-not-terminate-sucessfully-unknown"><span class="nav-number">3.</span> <span class="nav-text">3.docker-runc did not terminate sucessfully: unknown</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
