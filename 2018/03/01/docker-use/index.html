@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="LANCE 的博客">
 <meta property="og:description" content="docker 安装与使用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-01T03:52:42.809Z">
+<meta property="og:updated_time" content="2018-03-01T04:03:53.759Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker 使用">
 <meta name="twitter:description" content="docker 安装与使用">
@@ -400,21 +400,12 @@
       
         <p>docker 安装与使用<br><a id="more"></a></p>
 <p>##1.运行一个</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo docker <span class="keyword">run</span><span class="bash"> -t -i ubuntu:14.04 /bin/bash</span></div><div class="line">docker start eafd9111ada6                <span class="comment"># 启动容器</span></div></pre></td></tr></table></figure>
-<p>##1.镜像保存</p>
-<pre><code>docker commit -a &apos;message aaaa&apos; CONTAINER_ID NEW_IMAGE_NAME 
-#把该容器保存为一个新镜像
-docker commit -m=&apos;hello_world&apos; -a=&quot;lance&quot; 3eec6a474897 hello_world/lance
-</code></pre><p>##2.删除<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">docker rmi IMAGE ID 删除</div><div class="line">docker rmi <span class="_">-f</span> IMAGE ID 强制删除</div><div class="line">docker rm $(docker ps <span class="_">-a</span> -q) <span class="comment">#删除所有已经停止的容器</span></div></pre></td></tr></table></figure></p>
-<p>##3.导入导出</p>
-<pre><code>docker save -o ubuntu_14.04.tar ubuntu:14.04 ＃导出的是镜像
- #导入：
-sudo docker load &lt; ubuntu_14.04.tar 
-#或者
-docker export &lt;CONTAINER ID &gt; &gt; my_container.tar  #导出的是容器不是镜像
-cat my_container.tar |docker import - image_name:tag  
-</code></pre><p>##4.进入容器</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker exec -<span class="keyword">it</span> eafd9111ada6  /bin/bash  <span class="comment"># 进入容器</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo docker run -t -i ubuntu:14.04 /bin/bash</div><div class="line">docker start eafd9111ada6                <span class="comment"># 启动容器</span></div></pre></td></tr></table></figure>
+<p>##1.镜像保存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">docker commit <span class="_">-a</span> <span class="string">'message aaaa'</span> CONTAINER_ID NEW_IMAGE_NAME </div><div class="line"><span class="comment">#把该容器保存为一个新镜像</span></div><div class="line">docker commit -m=<span class="string">'hello_world'</span> <span class="_">-a</span>=<span class="string">"lance"</span> 3eec6a474897 hello_world/lance</div></pre></td></tr></table></figure></p>
+<p>##2.删除<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">docker rmi IMAGE ID 删除</div><div class="line">docker rmi <span class="_">-f</span> IMAGE ID 强制删除</div><div class="line">docker rm $(docker ps <span class="_">-a</span> -q) <span class="comment">#删除所有已经停止的容器</span></div></pre></td></tr></table></figure></p>
+<p>##3.导入导出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">docker save -o ubuntu_14.04.tar ubuntu:14.04 ＃导出的是镜像</div><div class="line"><span class="comment">#导入：</span></div><div class="line">sudo docker load &lt; ubuntu_14.04.tar </div><div class="line"><span class="comment">#或者</span></div><div class="line">docker <span class="built_in">export</span> &lt;CONTAINER ID &gt; &gt; my_container.tar  <span class="comment">#导出的是容器不是镜像</span></div><div class="line">cat my_container.tar |docker import - image_name:tag</div></pre></td></tr></table></figure></p>
+<p>##4.进入容器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker <span class="built_in">exec</span> -it eafd9111ada6  /bin/bash  <span class="comment"># 进入容器</span></div></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker <span class="built_in">history</span> image_id</div></pre></td></tr></table></figure>
 <p>#问题记录</p>
 <p>##1. docker命令自动补全功能<br>最小化安装centos后发现git docker等命令不能自动补全参数,而在Desktop安装环境下是可以自动补全的.</p>
