@@ -1,5 +1,12 @@
-docker 使用
 ---
+title: docker 使用
+date: 2018-03-01 11:54:59
+categories: develop
+tags:
+   - operation
+---
+git 的安装与使用。乱七八糟的整理
+<!-- more-->
 
 ##1.运行一个
 
