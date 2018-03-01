@@ -10,43 +10,44 @@ docker 安装与使用
 
 ##1.运行一个
 
-```
-    sudo docker run -t -i ubuntu:14.04 /bin/bash
-    docker start eafd9111ada6                # 启动容器
+```bash
+sudo docker run -t -i ubuntu:14.04 /bin/bash
+docker start eafd9111ada6                # 启动容器
 ```
 
 ##1.镜像保存
-
-    docker commit -a 'message aaaa' CONTAINER_ID NEW_IMAGE_NAME 
-    #把该容器保存为一个新镜像
-    docker commit -m='hello_world' -a="lance" 3eec6a474897 hello_world/lance
-##2.删除
+```bash
+docker commit -a 'message aaaa' CONTAINER_ID NEW_IMAGE_NAME 
+#把该容器保存为一个新镜像
+docker commit -m='hello_world' -a="lance" 3eec6a474897 hello_world/lance
 ```
-     docker rmi IMAGE ID 删除
-     docker rmi -f IMAGE ID 强制删除
-     docker rm $(docker ps -a -q) #删除所有已经停止的容器
+##2.删除
+```bash
+docker rmi IMAGE ID 删除
+docker rmi -f IMAGE ID 强制删除
+docker rm $(docker ps -a -q) #删除所有已经停止的容器
 ```
 
 
 ##3.导入导出
-
-     docker save -o ubuntu_14.04.tar ubuntu:14.04 ＃导出的是镜像
-      #导入：
-     sudo docker load < ubuntu_14.04.tar 
-     #或者
-     docker export <CONTAINER ID > > my_container.tar  #导出的是容器不是镜像
-     cat my_container.tar |docker import - image_name:tag  
+```bash
+docker save -o ubuntu_14.04.tar ubuntu:14.04 ＃导出的是镜像
+#导入：
+sudo docker load < ubuntu_14.04.tar 
+#或者
+docker export <CONTAINER ID > > my_container.tar  #导出的是容器不是镜像
+cat my_container.tar |docker import - image_name:tag  
+```
     
 
 ##4.进入容器
 
-```
+```bash
 docker exec -it eafd9111ada6  /bin/bash  # 进入容器
 ```
 
-```
+```bash
 docker history image_id
-
 
 ```
 
