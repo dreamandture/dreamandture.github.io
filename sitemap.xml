@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://dreamandture.github.io/2018/03/01/docker-use/</loc>
+    
+    <lastmod>2018-03-01T03:14:17.402Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://dreamandture.github.io/2018/02/28/git-use/</loc>
     
     <lastmod>2018-02-28T09:55:59.932Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://dreamandture.github.io/2017/08/23/wuhezhizhong/</loc>
     
     <lastmod>2017-08-23T00:48:52.904Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://dreamandture.github.io/2017/04/06/test/</loc>
-    
-    <lastmod>2017-04-06T10:42:10.980Z</lastmod>
     
   </url>
   

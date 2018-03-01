@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2F2018%2F03%2F01%2Fdocker-use%2F</url>
+    <content type="text"><![CDATA[docker 使用##1.运行一个 12sudo docker run -t -i ubuntu:14.04 /bin/bashdocker start eafd9111ada6 # 启动容器 ##1.镜像保存 docker commit -a &apos;message aaaa&apos; CONTAINER_ID NEW_IMAGE_NAME #把该容器保存为一个新镜像 docker commit -m=&apos;hello_world&apos; -a=&quot;lance&quot; 3eec6a474897 hello_world/lance ##2.删除123docker rmi IMAGE ID 删除docker rmi -f IMAGE ID 强制删除docker rm $(docker ps -a -q) #删除所有已经停止的容器 ##3.导入导出 docker save -o ubuntu_14.04.tar ubuntu:14.04 ＃导出的是镜像 #导入： sudo docker load &lt; ubuntu_14.04.tar #或者 docker export &lt;CONTAINER ID &gt; &gt; my_container.tar #导出的是容器不是镜像 cat my_container.tar |docker import - image_name:tag ##4.进入容器 1docker exec -it eafd9111ada6 /bin/bash # 进入容器 1docker history image_id #问题记录 ##1. docker命令自动补全功能最小化安装centos后发现git docker等命令不能自动补全参数,而在Desktop安装环境下是可以自动补全的. yum install bash-completion -y ##2.修改启动路径 ###2.1 Centos6下/etc/sysconfig/docker里面加入 other_args=&quot;-g /data/docker&quot; ###2.2 Centos7下修改 vim /usr/lib/systemd/system/docker.servicervice为 ExecStart=/usr/bin/docker daemon -H fd:// –graph /data/docker ##3.docker-runc did not terminate sucessfully: unknown1yum install http://mirror.centos.org/centos/7/os/x86_64/Packages/libseccomp-2.3.1-3.el7.x86_64.rpm]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[git 使用]]></title>
     <url>%2F2018%2F02%2F28%2Fgit-use%2F</url>
     <content type="text"><![CDATA[git 的安装与使用。乱七八糟的整理 ##1.git安装 ubuntu： 1234567$ apt-get install libcurl4-gnutls-dev libexpat1-dev gettext \ libz-dev libssl-dev$ apt-get install git-core$ git --versiongit version 1.8.1.2 centos: 1234567$ yum install curl-devel expat-devel gettext-devel \ openssl-devel zlib-devel$ yum -y install git-core$ git --versiongit version 1.7.1 用户信息： 12$ git config --global user.name "runoob"$ git config --global user.email test@runoob.com 查看配置： 12git config --listgit config user.name ##2.基本命令创建仓库： 123git init#orgit init &lt;dir&gt; 提交： 1234$ git add *.c$ git add README$ git commit -m '初始化项目版本'git tag -a v0.9 85fc7e7 #追加标签 克隆仓库： 12git clone &lt;repo&gt;git clone &lt;repo&gt; &lt;directory&gt; 查看更改 123git log --onelinegit log --oneline --decorate --graphgit diff commit-id-1 commit-id-2 回滚 1git reset --hard commit-id-1 标签 12345git tag -d &lt;tagname&gt; #删除标签git tag -a v0.9 &lt;commit-id&gt; #将标签应用到某次提交git tag -a version -m "note" #git tag 是打标签的命令，-a 是添加标签，其后要跟新标签号，-m 及后面的字符串是对该标签的注释。git show &lt;tagname&gt; ###分支12345#查看分支git branchgit branch -v#切换分支git checkout [分支名称] 12345678910git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;删除远程分支git push &lt;远程主机名&gt; 空:&lt;远程分支名&gt;git push origin :mysite删除本地分支 git branch -d &lt;本地分支名&gt; git branch -d mysite]]></content>
@@ -21,11 +26,6 @@
       <tags>
         <tag>book review</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[test]]></title>
-    <url>%2F2017%2F04%2F06%2Ftest%2F</url>
-    <content type="text"></content>
   </entry>
   <entry>
     <title><![CDATA[第一篇blog]]></title>
