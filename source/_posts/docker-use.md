@@ -5,7 +5,7 @@ categories: develop
 tags:
    - operation
 ---
-git 的安装与使用。乱七八糟的整理
+docker 安装与使用
 <!-- more-->
 
 ##1.运行一个
